@@ -19,7 +19,7 @@
   </head>
   <body>
     <div class="container">
-      <div class="col-4">
+      <div class="col-4 mt-5">
         <div class="form-inline">
           <div class="form-group">
             <div class="my-1 mr-2">
@@ -35,8 +35,29 @@
             </div>
           </div>
         </div>
-        <h2 class="" id="in-phan-tu-so-n">Heloo</h2>
+        <h2 id="phan-tu-mang-n"></h2>
       </div>
+      <!-- 1. Tổng số dương -->
+      <button class="btn btn-danger mt-5" onclick="tinhTongSoDuong()">
+        Tính tổng
+      </button>
+      <h2 id="tong-so-duong"></h2>
+
+      <!-- 2. Đếm số dương -->
+      <button class="btn btn-danger mt-5" onclick="demSoDuong()">Đếm số</button>
+      <h2 id="so-luong-so-duong"></h2>
+
+      <!-- 3. Tìm số nhỏ nhất -->
+      <button class="btn btn-danger mt-5" onclick="timSoNhoNhat()">
+        Tìm số nhỏ nhất
+      </button>
+      <h2 id="so-nho-nhat"></h2>
+
+      <!-- 4. Tìm số dương nhỏ nhất -->
+      <button class="btn btn-danger mt-5" onclick="timSoDuongNhoNhat()">
+        Tìm số dương nhỏ nhất
+      </button>
+      <h2 id="so-duong-nho-nhat"></h2>
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
