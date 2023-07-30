@@ -84,3 +84,32 @@ function timSoDuongNhoNhat() {
 //         document.getElementById("so-duong-nho-nhat").innerText = `Số dương nhỏ nhất: ${soDuongNhoNhat}`
 //     }
 // }
+
+// 5. Tìm số chẵn cuối cùng
+function timSoChanCuoiCung() {
+    var soChanCuoiCung = -1
+    for (i = 0; i < so_nArr.length; i++) {
+        if (so_nArr[i] % 2 == 0) {
+            soChanCuoiCung = so_nArr[i]
+        }
+    }
+    if (soChanCuoiCung == -1) {
+        document.getElementById("so-chan-cuoi-cung").innerText = `Không có số chẵn`
+    } else {
+        document.getElementById("so-chan-cuoi-cung").innerText = `Số chẵn cuối cùng: ${soChanCuoiCung}`
+    }
+}
+
+// 6. Đổi chỗ
+function doiCho() {
+    var soViTri1 = document.getElementById("so-vi-tri-1").value * 1
+    var soViTri2 = document.getElementById("so-vi-tri-2").value * 1
+    var giaTri1 = so_nArr[soViTri1]
+    var giaTri2 = so_nArr[soViTri2]
+    so_nArr[soViTri1] = giaTri2
+    so_nArr[soViTri2] = giaTri1
+    var mangnSauKhiDoi = so_nArr.reduce(function (phan_tu_n,number) {
+        return phan_tu_n +',' + number;
+    });
+    document.getElementById("doi-cho").innerText = `Mảng sau khi đổi: ${mangnSauKhiDoi}`
+}
