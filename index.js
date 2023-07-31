@@ -141,3 +141,42 @@ function timSoNguyenToDauTien() {
         document.getElementById("so-nguyen-to-dau-tien").innerText = `Số nguyên tố đầu tiên: ${soNguyenToDauTien}`
     }
 }
+
+var mang_SoNguyen = []
+// 9. Đếm số nguyên
+function themSoMangNguyen() {
+    var phanTuMangNguyen = document.getElementById("nhap-de-dem-so-nguyen").value * 1
+    mang_SoNguyen.push(phanTuMangNguyen)
+    document.getElementById("phan-tu-mang-so-nguyen").innerHTML = mang_SoNguyen
+}
+
+function demSoNguyen() {
+    var soLuongSoNguyen = 0
+    mang_SoNguyen.forEach(function(item) {
+        if (Number.isInteger(item) == true) {
+            soLuongSoNguyen++
+        }
+    })
+    document.getElementById("so-nguyen").innerText = `Số lượng số nguyên: ${soLuongSoNguyen}`
+}
+
+// 10. So sánh số lượng số âm và dương
+function soSanhAmDuong() {
+    var soLuongSoDuong_mangn = 0
+    var soLuongSoAm_mangn = 0
+    so_nArr.forEach(function(item) {
+        if (item > 0) {
+            soLuongSoDuong_mangn++
+        }
+        if (item < 0) {
+            soLuongSoAm_mangn++
+        }
+    })
+    if (soLuongSoDuong_mangn > soLuongSoAm_mangn) {
+        document.getElementById("so-sanh-so-am-duong").innerText = `Số dương > Số âm`
+    } else if (soLuongSoDuong_mangn < soLuongSoAm_mangn) {
+        document.getElementById("so-sanh-so-am-duong").innerText = `Số Âm > Số dương`
+    } else {
+        document.getElementById("so-sanh-so-am-duong").innerText = `Số dương = Số âm`
+    }
+}
