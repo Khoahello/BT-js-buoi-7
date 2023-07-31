@@ -2,10 +2,7 @@ var so_nArr = []
 function themSo() {
     var so_n = document.querySelector("#nhap-so-n").value * 1
     so_nArr.push(so_n)
-    var phanTuMangn = so_nArr.reduce(function (phan_tu_n,number) {
-        return phan_tu_n +',' + number;
-    });
-    document.getElementById("phan-tu-mang-n").innerText = phanTuMangn
+    document.getElementById("phan-tu-mang-n").innerHTML = so_nArr
 }
 
 // 1. Tổng số dương
@@ -108,8 +105,14 @@ function doiCho() {
     var giaTri2 = so_nArr[soViTri2]
     so_nArr[soViTri1] = giaTri2
     so_nArr[soViTri2] = giaTri1
-    var mangnSauKhiDoi = so_nArr.reduce(function (phan_tu_n,number) {
-        return phan_tu_n +',' + number;
-    });
-    document.getElementById("doi-cho").innerText = `Mảng sau khi đổi: ${mangnSauKhiDoi}`
+    // var mangnSauKhiDoi = so_nArr.reduce(function (phan_tu_n,number) {
+    //     return phan_tu_n +',' + number;
+    // });
+    document.getElementById("doi-cho").innerHTML = `Mảng sau khi đổi: ${so_nArr}`
+}
+
+// 7. Sắp xếp tăng dần
+function sapXepTangDan() {
+    so_nArr.sort(function(a, b){return a - b})
+    document.getElementById("sap-xep-tang-dan").innerHTML = so_nArr
 }
