@@ -1,14 +1,14 @@
-var so_nArr = []
+var mang_SoN = []
 function themSo() {
     var so_n = document.querySelector("#nhap-so-n").value * 1
-    so_nArr.push(so_n)
-    document.getElementById("phan-tu-mang-n").innerHTML = so_nArr
+    mang_SoN.push(so_n)
+    document.getElementById("phan-tu-mang-n").innerHTML = mang_SoN
 }
 
 // 1. Tổng số dương
 function tinhTongSoDuong() {
     var tongSoduong = 0
-    so_nArr.forEach(function(item) {
+    mang_SoN.forEach(function(item) {
         if (item > 0) {
             tongSoduong += item
         }
@@ -19,7 +19,7 @@ function tinhTongSoDuong() {
 // 2. Đếm số dương
 function demSoDuong() {
     var soLuongSoDuong = 0
-    so_nArr.forEach(function(item) {
+    mang_SoN.forEach(function(item) {
         if (item > 0) {
             soLuongSoDuong++
         }
@@ -29,10 +29,10 @@ function demSoDuong() {
 
 // 3. Tìm số nhỏ nhất
 function timSoNhoNhat() {
-    var soNhonhat = so_nArr[0]
-    for (i = 0; i < so_nArr.length; i++) {
-        if (soNhonhat > so_nArr[i])
-        soNhonhat = so_nArr[i]
+    var soNhonhat = mang_SoN[0]
+    for (i = 0; i < mang_SoN.length; i++) {
+        if (soNhonhat > mang_SoN[i])
+        soNhonhat = mang_SoN[i]
     }
     document.getElementById("so-nho-nhat").innerText = `Số nhỏ nhất: ${soNhonhat}`
 }
@@ -41,7 +41,7 @@ function timSoNhoNhat() {
 // Cách 1:
 var so_duongArr = []
 function timSoDuongNhoNhat() {
-    so_nArr.forEach(function(item) {
+    mang_SoN.forEach(function(item) {
         if (item > 0) {
             so_duongArr.push(item)
         }
@@ -61,9 +61,9 @@ function timSoDuongNhoNhat() {
 
 // Cách 2:
 // function timSoDuongNhoNhat() {
-//     var soDuongNhoNhat = so_nArr[0]
+//     var soDuongNhoNhat = mang_SoN[0]
 //     var soLuongSoDuong = 0
-//     so_nArr.forEach(function(item) {
+//     mang_SoN.forEach(function(item) {
 //         if (item > 0) {
 //             soLuongSoDuong++
 //         }
@@ -71,10 +71,10 @@ function timSoDuongNhoNhat() {
 //     if (soLuongSoDuong == 0) {
 //         document.getElementById("so-duong-nho-nhat").innerText = `Không có số dương`
 //     } else {
-//         for (i = 0; i < so_nArr.length; i++) {
-//             if (so_nArr[i] > 0) {
-//                 if (soDuongNhoNhat > so_nArr[i]) {
-//                     soDuongNhoNhat = so_nArr[i]
+//         for (i = 0; i < mang_SoN.length; i++) {
+//             if (mang_SoN[i] > 0) {
+//                 if (soDuongNhoNhat > mang_SoN[i]) {
+//                     soDuongNhoNhat = mang_SoN[i]
 //                 }
 //             }
 //         }
@@ -85,13 +85,13 @@ function timSoDuongNhoNhat() {
 // 5. Tìm số chẵn cuối cùng
 function timSoChanCuoiCung() {
     var soChanCuoiCung = -1
-    for (i = 0; i < so_nArr.length; i++) {
-        if (so_nArr[i] % 2 == 0) {
-            soChanCuoiCung = so_nArr[i]
+    for (i = 0; i < mang_SoN.length; i++) {
+        if (mang_SoN[i] % 2 == 0) {
+            soChanCuoiCung = mang_SoN[i]
         }
     }
     if (soChanCuoiCung == -1) {
-        document.getElementById("so-chan-cuoi-cung").innerText = `Không có số chẵn`
+        document.getElementById("so-chan-cuoi-cung").innerText = `-1`
     } else {
         document.getElementById("so-chan-cuoi-cung").innerText = `Số chẵn cuối cùng: ${soChanCuoiCung}`
     }
@@ -101,41 +101,41 @@ function timSoChanCuoiCung() {
 function doiCho() {
     var soViTri1 = document.getElementById("so-vi-tri-1").value * 1
     var soViTri2 = document.getElementById("so-vi-tri-2").value * 1
-    var giaTri1 = so_nArr[soViTri1]
-    var giaTri2 = so_nArr[soViTri2]
-    so_nArr[soViTri1] = giaTri2
-    so_nArr[soViTri2] = giaTri1
-    // var mangnSauKhiDoi = so_nArr.reduce(function (phan_tu_n,number) {
+    var giaTri1 = mang_SoN[soViTri1]
+    var giaTri2 = mang_SoN[soViTri2]
+    mang_SoN[soViTri1] = giaTri2
+    mang_SoN[soViTri2] = giaTri1
+    // var mangnSauKhiDoi = mang_SoN.reduce(function (phan_tu_n,number) {
     //     return phan_tu_n +',' + number;
     // });
-    document.getElementById("doi-cho").innerHTML = `Mảng sau khi đổi: ${so_nArr}`
+    document.getElementById("doi-cho").innerHTML = `Mảng sau khi đổi: ${mang_SoN}`
 }
 
 // 7. Sắp xếp tăng dần
 function sapXepTangDan() {
-    so_nArr.sort(function(a, b){return a - b})
-    document.getElementById("sap-xep-tang-dan").innerHTML = so_nArr
+    mang_SoN.sort(function(a, b){return a - b})
+    document.getElementById("sap-xep-tang-dan").innerHTML = mang_SoN
 }
 
 // 8. Tìm số nguyên tố đầu tiên
 function timSoNguyenToDauTien() {
     var mang_SoNguyenTo = []
-    for (i = 0; i < so_nArr.length; i++) {
+    for (i = 0; i < mang_SoN.length; i++) {
         var check = 1
-        if (so_nArr[i] > 1) {
-            for (a = 2; a < so_nArr[i] - 1; a++) {
-                if (so_nArr[i] % a == 0) {
+        if (mang_SoN[i] > 1) {
+            for (a = 2; a < mang_SoN[i] - 1; a++) {
+                if (mang_SoN[i] % a == 0) {
                     check = 0
                 }
             }
             if (check == 1) {
-                mang_SoNguyenTo.push(so_nArr[i])
+                mang_SoNguyenTo.push(mang_SoN[i])
             }
         }
     }
     
     if (mang_SoNguyenTo.length == 0) {
-        document.getElementById("so-nguyen-to-dau-tien").innerText = `Không có số nguyên tố`
+        document.getElementById("so-nguyen-to-dau-tien").innerText = `-1`
     } else {
         var soNguyenToDauTien = mang_SoNguyenTo[0]
         document.getElementById("so-nguyen-to-dau-tien").innerText = `Số nguyên tố đầu tiên: ${soNguyenToDauTien}`
@@ -164,7 +164,7 @@ function demSoNguyen() {
 function soSanhAmDuong() {
     var soLuongSoDuong_mangn = 0
     var soLuongSoAm_mangn = 0
-    so_nArr.forEach(function(item) {
+    mang_SoN.forEach(function(item) {
         if (item > 0) {
             soLuongSoDuong_mangn++
         }

@@ -16,12 +16,28 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+
+    <!-- Line awasome -->
+    <link
+      rel="stylesheet"
+      href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
+    />
+
+    <!-- My css -->
+    <link rel="stylesheet" href="index.css" />
   </head>
   <body>
     <div class="container">
-      <div class="col-4 mt-5">
+      <div class="d-flex flex-wrap mt-5 tieu_de">
+        <i class="las la-calculator"></i>
+        <h1>Nhập dữ liệu và xử lý mảng</h1>
+      </div>
+      <div class="col-4">
         <div class="form-inline">
           <div class="form-group">
+            <div class="my-1 mr-2 item-left">
+              <label for="">Nhập mảng số nguyên:</label>
+            </div>
             <div class="my-1 mr-2">
               <input
                 type="number"
@@ -38,102 +54,174 @@
         <h2 id="phan-tu-mang-n"></h2>
       </div>
       <!-- 1. Tổng số dương -->
-      <button class="btn btn-danger mt-5" onclick="tinhTongSoDuong()">
-        Tính tổng
-      </button>
-      <h2 id="tong-so-duong"></h2>
+      <div class="Cau-1 Cau">
+        <div class="d-flex flex-wrap tieu_de">
+          <h1>1. Tổng số dương</h1>
+          <i class="las la-plus-circle"></i>
+        </div>
+        <button class="btn btn-danger" onclick="tinhTongSoDuong()">
+          Tính tổng
+        </button>
+        <h2 id="tong-so-duong"></h2>
+      </div>
 
       <!-- 2. Đếm số dương -->
-      <button class="btn btn-danger mt-5" onclick="demSoDuong()">Đếm số</button>
-      <h2 id="so-luong-so-duong"></h2>
+      <div class="Cau-2 Cau">
+        <div class="d-flex flex-wrap tieu_de">
+          <h1>2. Đếm số dương</h1>
+          <i class="las la-hand-peace"></i>
+        </div>
+        <button class="btn btn-danger" onclick="demSoDuong()">Đếm số</button>
+        <h2 id="so-luong-so-duong"></h2>
+      </div>
 
       <!-- 3. Tìm số nhỏ nhất -->
-      <button class="btn btn-danger mt-5" onclick="timSoNhoNhat()">
-        Tìm số nhỏ nhất
-      </button>
-      <h2 id="so-nho-nhat"></h2>
+      <div class="Cau-3 Cau">
+        <div class="d-flex flex-wrap tieu_de">
+          <h1>3. Tìm số nhỏ nhất</h1>
+          <i class="las la-search"></i>
+        </div>
+        <button class="btn btn-danger" onclick="timSoNhoNhat()">
+          Tìm số nhỏ nhất
+        </button>
+        <h2 id="so-nho-nhat"></h2>
+      </div>
 
       <!-- 4. Tìm số dương nhỏ nhất -->
-      <button class="btn btn-danger mt-5" onclick="timSoDuongNhoNhat()">
-        Tìm số dương nhỏ nhất
-      </button>
-      <h2 id="so-duong-nho-nhat"></h2>
+      <div class="Cau-4 Cau">
+        <div class="d-flex flex-wrap tieu_de">
+          <h1>4. Tìm số dương nhỏ nhất</h1>
+          <i class="las la-search"></i>
+        </div>
+        <button class="btn btn-danger" onclick="timSoDuongNhoNhat()">
+          Tìm số dương nhỏ nhất
+        </button>
+        <h2 id="so-duong-nho-nhat"></h2>
+      </div>
 
       <!-- 5. Tìm số chẵn cuối cùng -->
-      <button class="btn btn-danger mt-5" onclick="timSoChanCuoiCung()">
-        Tìm số chẵn cuối cùng
-      </button>
-      <h2 id="so-chan-cuoi-cung"></h2>
+      <div class="Cau-5 Cau">
+        <div class="d-flex flex-wrap tieu_de">
+          <h1>5. Tìm số chẵn cuối cùng</h1>
+          <i class="las la-search"></i>
+        </div>
+        <p class="font-italic">
+          Nếu mảng không có giá trị chẵn thì sẽ trả về -1
+        </p>
+        <button class="btn btn-danger" onclick="timSoChanCuoiCung()">
+          Tìm số chẵn cuối cùng
+        </button>
+        <h2 id="so-chan-cuoi-cung"></h2>
+      </div>
 
       <!-- 6. Đổi chỗ -->
-      <div class="col-4">
-        <div class="form-inline">
-          <div class="form-group">
-            <div class="my-1 mr-sm-2">
-              <input
-                type="number"
-                class="form-control"
-                id="so-vi-tri-1"
-                placeholder="Nhập số vị trí 1"
-              />
-            </div>
-            <div class="my-1 mr-sm-2">
-              <input
-                type="number"
-                class="form-control"
-                id="so-vi-tri-2"
-                placeholder="Nhập số vị trí 2"
-              />
+      <div class="Cau-6 Cau">
+        <div class="d-flex flex-wrap tieu_de">
+          <h1>6. Đổi chỗ</h1>
+          <i class="las la-exchange-alt"></i>
+        </div>
+        <div class="col-4">
+          <div class="form-inline">
+            <div class="form-group">
+              <div class="my-1 mr-2 item-left">
+                <label for="">Nhập vị trí muốn đổi:</label>
+              </div>
+              <div class="my-1 mr-sm-2">
+                <input
+                  type="number"
+                  class="form-control"
+                  id="so-vi-tri-1"
+                  placeholder="Nhập số vị trí 1"
+                />
+              </div>
+              <div class="my-1 mr-sm-2">
+                <input
+                  type="number"
+                  class="form-control"
+                  id="so-vi-tri-2"
+                  placeholder="Nhập số vị trí 2"
+                />
+              </div>
             </div>
           </div>
         </div>
+        <button class="btn btn-danger" onclick="doiCho()">Đổi chỗ</button>
+        <h2 id="doi-cho"></h2>
       </div>
-      <button class="btn btn-danger mt-5" onclick="doiCho()">Đổi chỗ</button>
-      <h2 id="doi-cho"></h2>
 
       <!-- 7. Sắp xếp tăng dần -->
-      <button class="btn btn-danger mt-5" onclick="sapXepTangDan()">
-        Sắp xếp
-      </button>
-      <h2 id="sap-xep-tang-dan"></h2>
+      <div class="Cau-7 Cau">
+        <div class="d-flex flex-wrap tieu_de">
+          <h1>7. Sắp xếp tăng dần</h1>
+          <i class="las la-sort-numeric-down"></i>
+        </div>
+        <button class="btn btn-danger" onclick="sapXepTangDan()">
+          Sắp xếp
+        </button>
+        <h2 id="sap-xep-tang-dan"></h2>
+      </div>
 
       <!-- 8. Tìm số nguyên tố đầu tiên -->
-      <button class="btn btn-danger mt-5" onclick="timSoNguyenToDauTien()">
-        Tìm số nguyên tố
-      </button>
-      <h2 id="so-nguyen-to-dau-tien"></h2>
+      <div class="Cau-8 Cau">
+        <div class="d-flex flex-wrap tieu_de">
+          <h1>8. Tìm số nguyên tố đầu tiên</h1>
+          <i class="las la-search"></i>
+        </div>
+        <p class="font-italic">
+          Nếu mảng không có số nguyên tố thì sẽ trả về -1
+        </p>
+        <button class="btn btn-danger" onclick="timSoNguyenToDauTien()">
+          Tìm số nguyên tố
+        </button>
+        <h2 id="so-nguyen-to-dau-tien"></h2>
+      </div>
 
       <!-- 9. Đếm số nguyên -->
-      <div class="col-4 mt-5">
-        <div class="form-inline">
-          <div class="form-group">
-            <div class="my-1 mr-2">
-              <input
-                type="number"
-                class="form-control"
-                id="nhap-de-dem-so-nguyen"
-                placeholder="Nhập số"
-              />
-            </div>
-            <div class="my-1 mr-2">
-              <button class="btn btn-danger" onclick="themSoMangNguyen()">
-                Thêm số
-              </button>
+      <div class="Cau-9 Cau">
+        <div class="d-flex flex-wrap tieu_de">
+          <h1>9. Đếm số nguyên</h1>
+          <i class="las la-hand-peace"></i>
+        </div>
+        <div class="col-4">
+          <div class="form-inline">
+            <div class="form-group">
+              <div class="my-1 mr-2 item-left">
+                <label for="">Nhập mảng số thực:</label>
+              </div>
+              <div class="my-1 mr-2">
+                <input
+                  type="number"
+                  class="form-control"
+                  id="nhap-de-dem-so-nguyen"
+                  placeholder="Nhập số"
+                />
+              </div>
+              <div class="my-1 mr-2">
+                <button class="btn btn-danger" onclick="themSoMangNguyen()">
+                  Thêm số
+                </button>
+              </div>
             </div>
           </div>
+          <h2 id="phan-tu-mang-so-nguyen"></h2>
         </div>
-        <h2 id="phan-tu-mang-so-nguyen"></h2>
+        <button class="btn btn-danger" onclick="demSoNguyen()">
+          Đếm số nguyên
+        </button>
+        <h2 id="so-nguyen"></h2>
       </div>
-      <button class="btn btn-danger mt-5" onclick="demSoNguyen()">
-        Đếm số nguyên
-      </button>
-      <h2 id="so-nguyen"></h2>
 
       <!-- 10. So sánh số lượng số âm và dương -->
-      <button class="btn btn-danger mt-5" onclick="soSanhAmDuong()">
-        So Sánh
-      </button>
-      <h2 id="so-sanh-so-am-duong"></h2>
+      <div class="Cau-10 Cau">
+        <div class="d-flex flex-wrap tieu_de">
+          <h1>10. So sánh số lượng số âm và dương</h1>
+          <i class="las la-greater-than-equal"></i>
+        </div>
+        <button class="btn btn-danger" onclick="soSanhAmDuong()">
+          So Sánh
+        </button>
+        <h2 id="so-sanh-so-am-duong"></h2>
+      </div>
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
