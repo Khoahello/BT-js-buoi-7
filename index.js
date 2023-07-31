@@ -116,3 +116,28 @@ function sapXepTangDan() {
     so_nArr.sort(function(a, b){return a - b})
     document.getElementById("sap-xep-tang-dan").innerHTML = so_nArr
 }
+
+// 8. Tìm số nguyên tố đầu tiên
+function timSoNguyenToDauTien() {
+    var mang_SoNguyenTo = []
+    for (i = 0; i < so_nArr.length; i++) {
+        var check = 1
+        if (so_nArr[i] > 1) {
+            for (a = 2; a < so_nArr[i] - 1; a++) {
+                if (so_nArr[i] % a == 0) {
+                    check = 0
+                }
+            }
+            if (check == 1) {
+                mang_SoNguyenTo.push(so_nArr[i])
+            }
+        }
+    }
+    
+    if (mang_SoNguyenTo.length == 0) {
+        document.getElementById("so-nguyen-to-dau-tien").innerText = `Không có số nguyên tố`
+    } else {
+        var soNguyenToDauTien = mang_SoNguyenTo[0]
+        document.getElementById("so-nguyen-to-dau-tien").innerText = `Số nguyên tố đầu tiên: ${soNguyenToDauTien}`
+    }
+}
